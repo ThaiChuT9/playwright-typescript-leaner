@@ -13,7 +13,7 @@ export class LoginPage {
         this.loginButton = page.locator('[data-test="login-button"]');
     }
 
-    async gotoPage() {
+    async gotoLoginPage() {
         await this.page.goto('https://www.saucedemo.com/');
     }
 

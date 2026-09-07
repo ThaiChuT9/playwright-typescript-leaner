@@ -19,7 +19,7 @@ test("Login Test", async ({page}) => {
 
 test("Login Test with Invalid Credentials", async ({page}) => {
     const loginPage = new LoginPage(page);
-    await loginPage.gotoPage();
+    await loginPage.gotoLoginPage();
     await loginPage.login('invalid_user', 'invalid_password');
 
     await expect(page).toHaveURL('https://www.saucedemo.com/');

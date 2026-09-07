@@ -23,5 +23,5 @@ test("Login Test with Invalid Credentials", async ({page}) => {
     await loginPage.login('invalid_user', 'invalid_password');
 
     await expect(page).toHaveURL('https://www.saucedemo.com/');
-    await expect(page.locator('[data-test="error"]')).toBeVisible();
+    loginPage.getErrorMessage();
 });

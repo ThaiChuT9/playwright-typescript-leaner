@@ -1,0 +1,23 @@
+{
+  "name": "playwright-typescript-leaner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThaiChuT9/playwright-typescript-leaner.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ThaiChuT9/playwright-typescript-leaner/issues"
+  },
+  "homepage": "https://github.com/ThaiChuT9/playwright-typescript-leaner#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.5.0"
+  }
+}

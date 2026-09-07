@@ -23,5 +23,16 @@ test("Login Test with Invalid Credentials", async ({page}) => {
     await loginPage.login('invalid_user', 'invalid_password');
 
     await expect(page).toHaveURL('https://www.saucedemo.com/');
-    loginPage.getErrorMessage();
+    const errorMessage = await loginPage.getErrorMessage();
+    await expect(errorMessage).toBeVisible();
+    await expect(errorMessage).toHaveText(/Epic sadface: Username and password do not match any user in this service/);
+});
+
+test("Login Test with Empty Username Credentials", async ({page}) => {
+    const loginPage = new LoginPage(page);
+    await loginPage.gotoLoginPage();
+    await loginPage.login('', 'invalid_password');
+    const errorMessage = await loginPage.getErrorMessage();
+    await expect(errorMessage).toBeVisible();
+    await expect(errorMessage).toHaveText(/Epic sadface: Username is required/);
 });

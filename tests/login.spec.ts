@@ -21,7 +21,10 @@ test("Login Test", async ({page}) => {
 test("Login Test with Invalid Credentials", async ({page}) => {
     const loginPage = new LoginPage(page);
     await loginPage.gotoLoginPage();
-    await loginPage.login(loginUser.invalidUser.username, loginUser.invalidUser.password);
+    await loginPage.login(
+        loginUser.invalidUser.username, 
+        loginUser.invalidUser.password
+    );
 
     await expect(page).toHaveURL('https://www.saucedemo.com/');
     const errorMessage = await loginPage.getErrorMessage();

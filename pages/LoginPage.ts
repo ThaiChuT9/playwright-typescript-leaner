@@ -16,17 +16,14 @@ export class LoginPage {
         this.errorMessage = page.locator('[data-test="error"]');
     }
 
-    async gotoLoginPage() {
+    async gotoLoginPage()  {
         await this.page.goto('https://www.saucedemo.com/');
     }
 
-    async login(username: string, password: string) {
+    async login(username: string, password: string): Promise<void> {
         await this.usernameInput.fill(username);
         await this.passwordInput.fill(password);
         await this.loginButton.click();
     }
-
-    async getErrorMessage() {
-        return this.errorMessage;
-    }
+    
 }

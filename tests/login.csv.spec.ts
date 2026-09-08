@@ -11,7 +11,7 @@ loginUser.forEach((data: any) => {
         const loginPage = new LoginPage(page);
         await loginPage.gotoLoginPage();
         await loginPage.login(data.username, data.password);
-        if(data.expected === "success") {
+        if(data.expected == "success") {
             await expect(page).toHaveTitle(/Swag Labs/);
             await expect(page).toHaveURL(/inventory.html/);
         } else {

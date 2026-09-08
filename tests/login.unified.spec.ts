@@ -14,7 +14,8 @@ test.describe("Login Tests - Unified Data Reader", () => {
     ].forEach(({ data, type }) => {
         data.forEach((data: any) => {
             test(`Login Test for ${data.username} using ${type}`, async ({ page }) => {
-                test.skip(data.run !== "true", `Skipping test for ${data.username} as run is set to false`);
+                const shouldRun = data.run === true || data.run === "true";
+                test.skip(!shouldRun, `Skipping test for ${data.username} as run is set to false`);
                 const loginPage = new LoginPage(page);
                 await test.step('Go to login page', async () => {
                     await loginPage.gotoLoginPage();

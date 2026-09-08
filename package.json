@@ -18,7 +18,8 @@
   "homepage": "https://github.com/ThaiChuT9/playwright-typescript-leaner#readme",
   "devDependencies": {
     "@playwright/test": "^1.63.0",
-    "@types/node": "^26.5.0"
+    "@types/node": "^26.5.0",
+    "@types/xlsx": "^0.0.35"
   },
   "dependencies": {
     "csv": "^6.6.3",

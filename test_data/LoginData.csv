@@ -1,0 +1,5 @@
+username,password,expected,run
+error_user,secret_sauce,success,false
+standard_user,secret_sauce,success,true
+locked_out_user,secret_sauce,failure,true
+problem_user,secret_sauce,success,false

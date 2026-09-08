@@ -10,9 +10,9 @@ export class LoginPage {
 
     constructor(page: Page) {
         this.page = page;
-        this.usernameInput = page.locator('[data-test="username"]');
-        this.passwordInput = page.locator('[data-test="password"]');
-        this.loginButton = page.locator('[data-test="login-button"]');
+        this.usernameInput = page.getByPlaceholder('username');
+        this.passwordInput = page.getByPlaceholder('password');
+        this.loginButton = page.getByRole('button', {name: 'Login'});
         this.errorMessage = page.locator('[data-test="error"]');
     }
 

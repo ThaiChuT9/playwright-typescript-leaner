@@ -25,7 +25,6 @@ test("Login Test with Invalid Credentials", async ({page}) => {
         loginUser.invalidUser.username, 
         loginUser.invalidUser.password
     );
-
     await expect(page).toHaveURL('https://www.saucedemo.com/');
     await expect(loginPage.errorMessage).toBeVisible();
     await expect(loginPage.errorMessage).toHaveText(/Epic sadface: Sorry, this user has been locked out./);

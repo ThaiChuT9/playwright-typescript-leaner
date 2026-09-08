@@ -7,11 +7,12 @@ const loginXlsx = readData("test_data/loginData.xlsx", "Sheet1");
 const loginJson = readData("test_data/loginUser2.json");
 
 test.describe("Login Tests - Unified Data Reader", () => {
-    [
+    const readData = [
         { data: loginCSV, type: "CSV" },
         { data: loginXlsx, type: "XLSX" },
         { data: loginJson, type: "JSON" }
-    ].forEach(({ data, type }) => {
+    ];
+    readData.forEach(({ data, type }) => {
         data.forEach((data: any) => {
             test(`Login Test for ${data.username} using ${type}`, async ({ page }) => {
                 const shouldRun = data.run === true || data.run === "true";

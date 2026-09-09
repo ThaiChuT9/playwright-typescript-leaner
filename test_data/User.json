@@ -1,7 +1,10 @@
 {
     "validUser": {
         "username": "standard_user",
-        "password": "secret_sauce"
+        "password": "secret_sauce",
+        "firstname": "John",
+        "lastname": "Doe",
+        "zip": "12345"
     },
     "invalidUser": {
         "username": "locked_out_user",
